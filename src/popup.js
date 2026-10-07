@@ -4,7 +4,7 @@ import { t, uiLang, fmtTime } from "./i18n.js";
 const $ = (id) => document.getElementById(id);
 let ticker;
 
-// Statische Texte übersetzen
+// Translate the static texts
 document.documentElement.lang = uiLang();
 document.querySelectorAll("[data-i18n]").forEach((el) => (el.textContent = t(el.dataset.i18n)));
 document.querySelectorAll("[data-i18n-title]").forEach((el) => {
@@ -85,8 +85,8 @@ $("save").addEventListener("click", async () => {
   try { url = new URL(raw); } catch { showError(t("errInvalidUrl")); return; }
   if (!token) { showError(t("errTokenMissing")); return; }
 
-  // Firefox schließt das Popup, sobald die Berechtigungsabfrage erscheint –
-  // deshalb erst speichern, dann Rechte anfordern (synchron im Klick-Handler).
+  // Firefox closes the popup as soon as the permission prompt appears, so
+  // save first and request the permission afterwards (synchronously in the click handler).
   const saved = chrome.storage.local.set({ baseUrl: raw, token });
   const granted = await chrome.permissions.request({ origins: [`${url.origin}/*`] });
   await saved;

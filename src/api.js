@@ -32,7 +32,7 @@ async function call(path, params = {}) {
   return data.response;
 }
 
-/** { enabled: bool, till: Date|null } – till ist gesetzt, wenn temporär pausiert */
+/** { enabled: bool, till: Date|null } - till is set while temporarily paused */
 export async function getStatus() {
   const r = await call("/api/settings/get");
   const till = r.temporaryDisableBlockingTill ? new Date(r.temporaryDisableBlockingTill) : null;
@@ -53,7 +53,7 @@ export async function updateBadge() {
       const min = Math.max(1, Math.ceil((s.till - Date.now()) / 60000));
       text = `${min}m`; color = "#b7791f";
       title = t("tooltipPaused", fmtTime(s.till));
-      // Badge exakt zum Pausenende aktualisieren statt bis zum nächsten Minuten-Poll zu warten
+      // Refresh the badge exactly when the pause ends, instead of waiting for the next minute poll
       chrome.alarms.create("expire", { when: s.till.getTime() + 2000 });
     } else {
       text = t("badgeOff"); color = "#b4382a"; title = t("tooltipOff");

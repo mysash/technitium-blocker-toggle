@@ -11,5 +11,5 @@ chrome.alarms.onAlarm.addListener((a) => {
   if (a.name === "refresh" || a.name === "expire") updateBadge();
 });
 chrome.runtime.onMessage.addListener((msg) => { if (msg === "refresh") updateBadge(); });
-// Rechte können auch nachträglich (z. B. über about:addons) erteilt werden
+// Permissions can also be granted later, e.g. via about:addons
 chrome.permissions.onAdded.addListener(() => updateBadge());
