@@ -1,0 +1,47 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    # Job level, so the signing steps can test it in their `if:` conditions.
+    # A step's own `env:` block is not visible to that same step's `if:`.
+    env:
+      AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+      AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Tag must match the manifest version
+        run: |
+          v=$(grep -oP '"version":\s*"\K[^"]+' platform/chrome/manifest.json)
+          [[ "v$v" == "$GITHUB_REF_NAME" ]] || { echo "Tag $GITHUB_REF_NAME != manifest v$v"; exit 1; }
+
+      - name: Build
+        run: bash build.sh
+
+      - uses: actions/setup-node@v4
+        if: ${{ env.AMO_JWT_ISSUER != '' }}
+        with:
+          node-version: 22
+
+      - name: Sign the Firefox add-on at AMO (unlisted)
+        if: ${{ env.AMO_JWT_ISSUER != '' }}
+        run: |
+          npx --yes web-ext@8 sign --channel=unlisted \
+            --source-dir dist/firefox --artifacts-dir dist/signed \
+            --api-key "$AMO_JWT_ISSUER" --api-secret "$AMO_JWT_SECRET"
+          mv dist/signed/*.xpi "dist/technitium-blocker-firefox-${GITHUB_REF_NAME#v}.xpi"
+
+      - uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          files: |
+            dist/*.zip
+            dist/*.xpi

@@ -1,0 +1,41 @@
+:root {
+  --ink: #17262d; --muted: #5d6f76; --line: #d5dfe1; --bg: #ffffff; --btn: #eef3f4;
+  --on: #1f6f5c; --paused: #b7791f; --off: #b4382a;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --ink: #e4eef0; --muted: #93a7ad; --line: #2c3c42; --bg: #142024; --btn: #1d2d33;
+          --on: #3fae8f; --paused: #e0a63a; --off: #e0634f; }
+}
+* { box-sizing: border-box; }
+body {
+  width: 290px; margin: 0; padding: 14px; background: var(--bg); color: var(--ink);
+  font: 13px/1.4 "Segoe UI Variable Text", "Segoe UI", system-ui, sans-serif;
+}
+header { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 14px; }
+.lamp { flex: none; width: 12px; height: 12px; margin-top: 5px; border-radius: 50%; background: var(--line); }
+body[data-state="on"] .lamp     { background: var(--on);     box-shadow: 0 0 0 4px color-mix(in srgb, var(--on) 22%, transparent); }
+body[data-state="paused"] .lamp { background: var(--paused); box-shadow: 0 0 0 4px color-mix(in srgb, var(--paused) 22%, transparent); }
+body[data-state="off"] .lamp    { background: var(--off);    box-shadow: 0 0 0 4px color-mix(in srgb, var(--off) 22%, transparent); }
+.status { flex: 1; min-width: 0; }
+h1 { margin: 0; font-size: 16px; font-weight: 600; }
+#detail { margin: 2px 0 0; color: var(--muted); font-variant-numeric: tabular-nums; }
+.group { margin: 0 0 6px; color: var(--muted); }
+.row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-bottom: 6px; }
+button {
+  font: inherit; color: inherit; background: var(--btn); border: 1px solid var(--line);
+  border-radius: 6px; padding: 8px 6px; cursor: pointer; width: 100%;
+}
+button:hover:not(:disabled) { border-color: var(--muted); }
+button:focus-visible, input:focus-visible { outline: 2px solid var(--on); outline-offset: 1px; }
+button:disabled { opacity: .5; cursor: wait; }
+button.danger { color: var(--off); }
+button.primary { background: var(--on); border-color: var(--on); color: #fff; font-weight: 600; margin-top: 6px; }
+button.icon { width: auto; padding: 2px 7px; background: none; border-color: transparent; color: var(--muted); font-size: 15px; }
+#settings label { display: block; margin-bottom: 8px; color: var(--muted); }
+input {
+  display: block; width: 100%; margin-top: 3px; padding: 7px 8px; font: inherit; color: var(--ink);
+  background: var(--btn); border: 1px solid var(--line); border-radius: 6px;
+}
+#error { margin: 10px 0 0; padding: 8px; border-radius: 6px; color: var(--off);
+         background: color-mix(in srgb, var(--off) 10%, transparent); }

@@ -1,0 +1,113 @@
+{
+  "extName": {
+    "message": "Technitium Blocker-Schalter"
+  },
+  "extDescription": {
+    "message": "Pausiert den Blocker des Technitium DNS Servers für 1, 2 oder 5 Minuten oder schaltet ihn dauerhaft ab."
+  },
+  "actionTitle": {
+    "message": "Technitium Blocker"
+  },
+  "statusLoading": {
+    "message": "Status wird geladen …"
+  },
+  "statusActive": {
+    "message": "Blocker aktiv"
+  },
+  "statusActiveDetail": {
+    "message": "Werbung und Tracker werden gefiltert."
+  },
+  "statusPaused": {
+    "message": "Blocker pausiert"
+  },
+  "statusPausedDetail": {
+    "message": "Aktiv ab $1, noch $2"
+  },
+  "statusOff": {
+    "message": "Blocker aus"
+  },
+  "statusOffDetail": {
+    "message": "Bleibt aus, bis du ihn wieder einschaltest."
+  },
+  "statusNoConnection": {
+    "message": "Keine Verbindung"
+  },
+  "setupTitle": {
+    "message": "Einrichtung"
+  },
+  "setupDetail": {
+    "message": "Server-Adresse und API-Token eintragen."
+  },
+  "accessMissingTitle": {
+    "message": "Zugriff fehlt"
+  },
+  "accessMissingDetail": {
+    "message": "Auf „Speichern und verbinden“ klicken und Zugriff erlauben."
+  },
+  "pauseFor": {
+    "message": "Pausieren für"
+  },
+  "minutesShort": {
+    "message": "$1 Min"
+  },
+  "turnOff": {
+    "message": "Dauerhaft ausschalten"
+  },
+  "turnOn": {
+    "message": "Blocker wieder einschalten"
+  },
+  "settings": {
+    "message": "Einstellungen"
+  },
+  "serverAddress": {
+    "message": "Server-Adresse"
+  },
+  "apiToken": {
+    "message": "API-Token"
+  },
+  "saveConnect": {
+    "message": "Speichern und verbinden"
+  },
+  "errMissingConfig": {
+    "message": "Server-Adresse und Token fehlen. Trag sie in den Einstellungen ein."
+  },
+  "errTimeout": {
+    "message": "Server antwortet nicht (Timeout nach 8 s)."
+  },
+  "errUnreachable": {
+    "message": "Server nicht erreichbar. Adresse, Port und ggf. Zertifikat prüfen."
+  },
+  "errHttp": {
+    "message": "Server meldet HTTP $1."
+  },
+  "errInvalidToken": {
+    "message": "Token ungültig oder abgelaufen."
+  },
+  "errApi": {
+    "message": "API-Fehler: $1"
+  },
+  "errInvalidUrl": {
+    "message": "Server-Adresse ungültig, z. B. http://192.168.1.53:5380"
+  },
+  "errTokenMissing": {
+    "message": "API-Token fehlt."
+  },
+  "errAccessDenied": {
+    "message": "Zugriff auf $1 wurde nicht erlaubt."
+  },
+  "badgeOff": {
+    "message": "AUS"
+  },
+  "tooltipActive": {
+    "message": "Technitium Blocker: aktiv"
+  },
+  "tooltipPaused": {
+    "message": "Technitium Blocker: pausiert bis $1"
+  },
+  "tooltipOff": {
+    "message": "Technitium Blocker: ausgeschaltet"
+  },
+  "tooltipError": {
+    "message": "Technitium Blocker: $1"
+  }
+}

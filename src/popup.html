@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body data-state="loading">
+  <header>
+    <span class="lamp" aria-hidden="true"></span>
+    <div class="status">
+      <h1 id="title" data-i18n="statusLoading"></h1>
+      <p id="detail"></p>
+    </div>
+    <button id="gear" class="icon" data-i18n-title="settings">⚙</button>
+  </header>
+
+  <main id="controls">
+    <p class="group" data-i18n="pauseFor"></p>
+    <div class="row">
+      <button data-minutes="1"></button>
+      <button data-minutes="2"></button>
+      <button data-minutes="5"></button>
+    </div>
+    <button id="disable" class="danger" data-i18n="turnOff"></button>
+    <button id="enable" class="primary" data-i18n="turnOn" hidden></button>
+  </main>
+
+  <section id="settings" hidden>
+    <label><span data-i18n="serverAddress"></span>
+      <input id="url" type="url" placeholder="http://192.168.1.53:5380" spellcheck="false">
+    </label>
+    <label><span data-i18n="apiToken"></span>
+      <input id="token" type="password" spellcheck="false" autocomplete="off">
+    </label>
+    <button id="save" class="primary" data-i18n="saveConnect"></button>
+  </section>
+
+  <p id="error" role="alert" hidden></p>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

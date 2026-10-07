@@ -1,0 +1,113 @@
+{
+  "extName": {
+    "message": "Technitium Blocker Toggle"
+  },
+  "extDescription": {
+    "message": "Pause the blocking of your Technitium DNS Server for 1, 2 or 5 minutes, or turn it off."
+  },
+  "actionTitle": {
+    "message": "Technitium Blocker"
+  },
+  "statusLoading": {
+    "message": "Loading status…"
+  },
+  "statusActive": {
+    "message": "Blocking active"
+  },
+  "statusActiveDetail": {
+    "message": "Ads and trackers are being filtered."
+  },
+  "statusPaused": {
+    "message": "Blocking paused"
+  },
+  "statusPausedDetail": {
+    "message": "Back on at $1, $2 left"
+  },
+  "statusOff": {
+    "message": "Blocking off"
+  },
+  "statusOffDetail": {
+    "message": "Stays off until you turn it back on."
+  },
+  "statusNoConnection": {
+    "message": "No connection"
+  },
+  "setupTitle": {
+    "message": "Setup"
+  },
+  "setupDetail": {
+    "message": "Enter server address and API token."
+  },
+  "accessMissingTitle": {
+    "message": "Access missing"
+  },
+  "accessMissingDetail": {
+    "message": "Click “Save and connect” and allow access."
+  },
+  "pauseFor": {
+    "message": "Pause for"
+  },
+  "minutesShort": {
+    "message": "$1 min"
+  },
+  "turnOff": {
+    "message": "Turn off"
+  },
+  "turnOn": {
+    "message": "Turn blocking back on"
+  },
+  "settings": {
+    "message": "Settings"
+  },
+  "serverAddress": {
+    "message": "Server address"
+  },
+  "apiToken": {
+    "message": "API token"
+  },
+  "saveConnect": {
+    "message": "Save and connect"
+  },
+  "errMissingConfig": {
+    "message": "Server address and token are missing. Enter them in the settings."
+  },
+  "errTimeout": {
+    "message": "Server is not responding (timeout after 8 s)."
+  },
+  "errUnreachable": {
+    "message": "Server not reachable. Check address, port and certificate."
+  },
+  "errHttp": {
+    "message": "Server returned HTTP $1."
+  },
+  "errInvalidToken": {
+    "message": "Token invalid or expired."
+  },
+  "errApi": {
+    "message": "API error: $1"
+  },
+  "errInvalidUrl": {
+    "message": "Invalid server address, e.g. http://192.168.1.53:5380"
+  },
+  "errTokenMissing": {
+    "message": "API token is missing."
+  },
+  "errAccessDenied": {
+    "message": "Access to $1 was not granted."
+  },
+  "badgeOff": {
+    "message": "OFF"
+  },
+  "tooltipActive": {
+    "message": "Technitium Blocker: active"
+  },
+  "tooltipPaused": {
+    "message": "Technitium Blocker: paused until $1"
+  },
+  "tooltipOff": {
+    "message": "Technitium Blocker: off"
+  },
+  "tooltipError": {
+    "message": "Technitium Blocker: $1"
+  }
+}
